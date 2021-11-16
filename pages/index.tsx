@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { ReactElement, useEffect } from "react";
+import { useEffect } from "react";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
 import LoginForm from "../components/home/LoginForm";
@@ -8,7 +8,7 @@ import LayoutHomepage from "../components/common/LayoutHomepage";
 import checkLogin from "../lib/utils/checkLogin";
 import Router from "next/dist/client/router";
 
-const Home: NextPage = () => {
+function Home() {
   useEffect(() => {
     const currentUser = window.localStorage.getItem("user");
     const isLoggedIn = checkLogin(currentUser);
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       </Container>
     </>
   );
-};
+}
 
 Home.PageLayout = LayoutHomepage;
 
