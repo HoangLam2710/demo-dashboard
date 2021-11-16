@@ -1,0 +1,95 @@
+.sidebar {
+  width: 250px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: 100;
+  transition: width 0.3s;
+}
+
+.sidebarBrand {
+  height: 90px;
+  padding: 1rem 0 1rem 2rem;
+  color: var(--color-white);
+}
+
+.sidebarBrand h1 {
+  font-size: 1.8rem;
+}
+
+.sidebarBrand span {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+.sidebarMenu li {
+  width: 100%;
+  margin-bottom: 1.3rem;
+  padding-right: 2rem;
+}
+
+.sidebarMenu a {
+  padding-left: 2rem;
+  display: block;
+  color: var(--color-white);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.sidebarMenu a:hover,
+.sidebarMenu a.active {
+  background-color: var(--color-white);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  color: var(--main-color);
+  border-radius: 0 30px 30px 0;
+}
+
+.sidebarMenu a i {
+  font-size: 1.2rem;
+  padding-right: 1rem;
+}
+
+/* not active */
+
+.sidebarClose {
+  width: 70px;
+}
+
+.sidebarClose .sidebarBrand {
+  padding-left: 1.2rem;
+}
+
+.sidebarClose .sidebarMenu a {
+  padding-left: 1.6rem;
+}
+
+.sidebarClose .sidebarMenu li {
+  padding-right: 0.5rem;
+  text-align: center;
+}
+
+.sidebarClose .sidebarBrand h1 span,
+.sidebarClose .sidebarMenu li a span {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .sidebar {
+    z-index: 200;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sidebar {
+    right: 0;
+    transition: right 0.3s;
+  }
+
+  .sidebarClose {
+    right: -100%;
+  }
+}
