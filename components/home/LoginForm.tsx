@@ -1,5 +1,5 @@
 import React from "react";
-import { FormikProps, useFormik } from "formik";
+import { useFormik } from "formik";
 import * as yup from "yup";
 import { Form, Button, Container } from "react-bootstrap";
 import styles from "../../styles/Home.module.css";

@@ -8,6 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^1.8.0",
+    "axios": "^0.24.0",
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.7.0",
     "formik": "^2.2.9",
@@ -15,6 +17,7 @@
     "react": "17.0.2",
     "react-bootstrap": "^1.6.4",
     "react-dom": "17.0.2",
+    "swr": "^1.0.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {

@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Layout from "../components/common/Layout";
 import OpenSidebarContextProvider from "../lib/context/OpenSidebarContext";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 type ComponentWithPageLayout = AppProps & {
   Component: AppProps["Component"] & {
@@ -25,6 +26,13 @@ function MyApp({ Component, pageProps }: ComponentWithPageLayout) {
       {Component.PageLayout ? (
         <Component {...pageProps} />
       ) : (
+        // <Auth0Provider
+        //   domain="dev-tkvggn0o.au.auth0.com"
+        //   clientId="OySeeHAFISbIaq1i7Gwz5nmDtBGO0JL8"
+        //   redirectUri={window.location.origin}
+        // >
+
+        // </Auth0Provider>
         <OpenSidebarContextProvider>
           <Layout>
             <Component {...pageProps} />

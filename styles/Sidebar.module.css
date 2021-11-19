@@ -1,7 +1,7 @@
 .sidebar {
   width: 250px;
   position: fixed;
-  right: 0;
+  left: 0;
   top: 0;
   height: 100%;
   background-color: var(--main-color);
@@ -10,9 +10,9 @@
 }
 
 .sidebarBrand {
-  height: 90px;
   padding: 1rem 0 1rem 2rem;
   color: var(--color-white);
+  margin-bottom: 1rem;
 }
 
 .sidebarBrand h1 {
@@ -22,6 +22,10 @@
 .sidebarBrand span {
   display: inline-block;
   padding-right: 1rem;
+}
+
+.sidebarBrand .buttonClose {
+  display: none;
 }
 
 .sidebarMenu li {
@@ -39,8 +43,7 @@
   transition: all 0.3s;
 }
 
-.sidebarMenu a:hover,
-.sidebarMenu a.active {
+.sidebarMenu a:hover {
   background-color: var(--color-white);
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
@@ -81,15 +84,29 @@
   .sidebar {
     z-index: 200;
   }
+
+  .sidebarClose .sidebarBrand .buttonClose {
+    display: none;
+  }
+
+  .sidebarBrand .buttonClose {
+    display: block;
+    text-align: right;
+    padding-right: 1rem;
+  }
+
+  .sidebarBrand .buttonClose i {
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .sidebar {
-    right: 0;
-    transition: right 0.3s;
+    left: 0;
+    transition: left 0.3s;
   }
 
   .sidebarClose {
-    right: -100%;
+    left: -100%;
   }
 }
