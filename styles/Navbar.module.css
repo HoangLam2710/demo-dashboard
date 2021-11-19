@@ -6,15 +6,15 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: fixed;
-  right: 250px;
+  left: 250px;
   width: calc(100% - 250px);
   top: 0;
   z-index: 100;
-  transition: right 0.3s;
+  transition: left 0.3s;
 }
 
 .sidebarClose {
-  right: 70px;
+  left: 70px;
   width: calc(100% - 70px);
 }
 
@@ -120,7 +120,7 @@
 
 @media only screen and (max-width: 1200px) {
   .navbar {
-    right: 70px;
+    left: 70px;
     width: calc(100% - 70px);
   }
 
@@ -135,7 +135,7 @@
   }
 
   .navbar {
-    right: 0px;
+    left: 0px;
     width: calc(100% - 0px);
     padding: 1rem;
   }
