@@ -108,7 +108,6 @@ const EditUserForm = (props: any) => {
             value={formik.values.firstName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            required
           />
           {formik.touched.firstName && (
             <Form.Text className="text-danger">
@@ -125,7 +124,6 @@ const EditUserForm = (props: any) => {
             value={formik.values.lastName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            required
           />
           {formik.touched.lastName && (
             <Form.Text className="text-danger">

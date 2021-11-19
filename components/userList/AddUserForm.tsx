@@ -78,12 +78,12 @@ const AddUserForm = (props: any) => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           >
+            <option value=""></option>
             <option value="mr">Mr</option>
             <option value="ms">Ms</option>
             <option value="mrs">Mrs</option>
             <option value="miss">Miss</option>
             <option value="dr">Dr</option>
-            <option value=""></option>
           </Form.Control>
           {formik.touched.title && (
             <Form.Text className="text-danger">{formik.errors.title}</Form.Text>
@@ -98,7 +98,6 @@ const AddUserForm = (props: any) => {
             value={formik.values.firstName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            required
           />
           {formik.touched.firstName && (
             <Form.Text className="text-danger">
@@ -115,7 +114,6 @@ const AddUserForm = (props: any) => {
             value={formik.values.lastName}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            required
           />
           {formik.touched.lastName && (
             <Form.Text className="text-danger">
@@ -132,7 +130,6 @@ const AddUserForm = (props: any) => {
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            required
           />
           {formik.touched.email && (
             <Form.Text className="text-danger">{formik.errors.email}</Form.Text>
