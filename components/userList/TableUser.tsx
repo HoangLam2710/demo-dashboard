@@ -43,7 +43,7 @@ const TableUser = () => {
 
   return (
     <>
-      <Table>
+      <Table className={styles.tableUser}>
         <thead>
           <tr>
             <th>ID</th>
@@ -65,7 +65,8 @@ const TableUser = () => {
                 />
               </td>
               <td>
-                {user.title.toUpperCase()} {user.firstName} {user.lastName}
+                {user.title.charAt(0).toUpperCase() + user.title.slice(1)}{" "}
+                {user.firstName} {user.lastName}
               </td>
               <td>
                 <EditButton userId={user.id} />{" "}

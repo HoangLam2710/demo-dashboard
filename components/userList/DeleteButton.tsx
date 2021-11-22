@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 import { SERVER_BASE_URL } from "../../lib/utils/constant";
 import styles from "../../styles/User.module.css";
 
@@ -26,6 +27,15 @@ const DeleteButton = (props: any) => {
     } catch (error) {
       console.error(error);
     } finally {
+      toast.success("User is successfully deleted!!!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       setLoading(false);
     }
   };
