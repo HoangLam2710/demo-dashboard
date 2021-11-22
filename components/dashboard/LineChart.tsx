@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Line } from "react-chartjs-2";
 import useSWR from "swr";
-import * as dayjs from "dayjs";
+import { default as dayjs } from "dayjs";
 import fetcher from "../../lib/utils/fetcher";
 import ErrorMessage from "../common/ErrorMessage";
 import LoadingSpinner from "../common/LoadingSpinner";
