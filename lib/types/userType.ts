@@ -7,7 +7,7 @@ export type UserType = {
 };
 
 export type UserFullType = {
-  title: string;
+  title: { value: string; label: string };
   firstName: string;
   lastName: string;
   email: string;

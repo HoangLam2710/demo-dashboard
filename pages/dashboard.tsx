@@ -1,8 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Cards from "../components/dashboard/Cards";
+import BarChart from "../components/dashboard/BarChart";
 import NewCustomer from "../components/dashboard/NewCustomer";
 import RecentProjects from "../components/dashboard/RecentProjects";
+import LineChart from "../components/dashboard/LineChart";
+import DoughnutChart from "../components/dashboard/DoughnutChart";
 
 const Dashboard = () => {
   return (
@@ -17,6 +20,7 @@ const Dashboard = () => {
             <NewCustomer />
           </Col>
         </Row>
+        <LineChart />
       </Container>
     </>
   );

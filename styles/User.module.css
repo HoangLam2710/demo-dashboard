@@ -43,9 +43,43 @@
 }
 
 /* ---------------------------------------- */
+/* Table User */
+@media only screen and (max-width: 767px) {
+  .tableUser thead tr th:first-child,
+  .tableUser tbody tr td:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 25%;
+    display: inline-block;
+  }
+  .tableUser thead tr th:nth-child(2),
+  .tableUser tbody tr td:nth-child(2) {
+    display: none;
+  }
+  .tableUser thead tr th:nth-child(3),
+  .tableUser tbody tr td:nth-child(3) {
+    width: 40%;
+    display: inline-block;
+  }
+  .tableUser thead tr th:last-child,
+  .tableUser tbody tr td:last-child {
+    width: 35%;
+    display: inline-block;
+  }
+}
+
+/* ---------------------------------------- */
 /* Add User */
 .addButton {
   line-height: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .addButton {
+    font-size: 0.9rem;
+    padding: 0.375rem 0.5rem;
+  }
 }
 
 .modalHeader {
