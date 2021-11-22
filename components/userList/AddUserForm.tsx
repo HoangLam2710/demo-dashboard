@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { Form, Button, Container } from "react-bootstrap";
-import { UserFullType } from "../../lib/types/userType";
 import axios from "axios";
+import Select from "react-select";
+import { Form, Button, Container } from "react-bootstrap";
+import { toast } from "react-toastify";
+import { UserFullType } from "../../lib/types/userType";
 import { SERVER_BASE_URL } from "../../lib/utils/constant";
 
 const validationSchema = yup.object().shape({
-  title: yup.string(),
+  title: yup
+    .object()
+    .shape({
+      value: yup.string(),
+      label: yup.string(),
+    })
+    .required("Please select a value")
+    .nullable(),
   firstName: yup.string().required("Required!!!"),
   lastName: yup.string().required("Required!!!"),
   email: yup.string().email("Invalid email format!!!").required("Required!!!"),
@@ -16,12 +25,21 @@ const validationSchema = yup.object().shape({
 const AddUserForm = (props: any) => {
   const [isLoading, setLoading] = useState(false);
 
+  const options = [
+    { value: "", label: "" },
+    { value: "mr", label: "Mr" },
+    { value: "ms", label: "Ms" },
+    { value: "mrs", label: "Mrs" },
+    { value: "miss", label: "Miss" },
+    { value: "dr", label: "Dr" },
+  ];
+
   const handleClosePopup = () => {
     props.closePopup();
   };
 
   const initialValues: UserFullType = {
-    title: "",
+    title: { value: "", label: "" },
     firstName: "",
     lastName: "",
     email: "",
@@ -44,11 +62,23 @@ const AddUserForm = (props: any) => {
         url: `${SERVER_BASE_URL}/create`,
         method: "POST",
         headers: { "app-id": "61948d0ce6d8b3a3164452e0" },
-        data: formik.values,
+        data: {
+          ...formik.values,
+          title: formik.values.title.value,
+        },
       }).then((res) => handleClosePopup());
     } catch (error) {
       console.error(error);
     } finally {
+      toast.success("You added user successfully!!!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       setLoading(false);
     }
   };
@@ -71,20 +101,16 @@ const AddUserForm = (props: any) => {
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Title</Form.Label>
-          <Form.Control
-            as="select"
+          <Select
+            options={options}
             name="title"
             value={formik.values.title}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          >
-            <option value=""></option>
-            <option value="mr">Mr</option>
-            <option value="ms">Ms</option>
-            <option value="mrs">Mrs</option>
-            <option value="miss">Miss</option>
-            <option value="dr">Dr</option>
-          </Form.Control>
+            onChange={(selectedOption) => {
+              let event = { target: { name: "title", value: selectedOption } };
+              formik.handleChange(event);
+            }}
+            onBlur={() => formik.handleBlur({ target: { name: "title" } })}
+          />
           {formik.touched.title && (
             <Form.Text className="text-danger">{formik.errors.title}</Form.Text>
           )}
