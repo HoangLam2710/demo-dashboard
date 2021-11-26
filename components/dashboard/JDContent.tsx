@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import Image from "next/dist/client/image";
-import Link from "next/dist/client/link";
 import styles from "../../styles/JobDescription.module.css";
 import JDContentChild from "./JDContentChild";
 import JDContentTags from "./JDContentTags";
 import JDVideo from "./JDVideo";
+import JDReadmore from "./JDReadmore";
 
 const JDContent = (props: any) => {
   const {
@@ -105,12 +105,7 @@ const JDContent = (props: any) => {
                   <Col sm={4} className={styles.jdContentRight}>
                     <div className={styles.blockContent}>
                       <p className={styles.title}>About Walter Holdings</p>
-                      {aboutCompany}
-                      <Link href="#">
-                        <a>
-                          View Company <i className="bi bi-arrow-right" />
-                        </a>
-                      </Link>
+                      <JDReadmore aboutCompany={aboutCompany} />
                     </div>
 
                     <div className={styles.blockContent}>

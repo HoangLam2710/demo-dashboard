@@ -241,22 +241,29 @@
 }
 
 .jdContentBottom .blockContent ul {
-  list-style-type: disc;
   padding-left: 1.5rem;
+}
+
+.jdContentBottom .blockContent ul li {
+  list-style-type: disc;
 }
 
 .jdContentBottom .title {
   font-weight: bold;
 }
 
-.jdContentBottom .jdContentRight a {
+/* ------------------------------------------------ */
+/* read more */
+
+.readmore {
   font-size: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  color: var(--main-color);
 }
 
-.jdContentBottom .jdContentRight a i {
+.readmore i {
   font-size: 1rem;
   margin-left: 0.5rem;
 }

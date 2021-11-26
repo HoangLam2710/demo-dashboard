@@ -13,7 +13,7 @@ const Data = {
   status: "Active",
   expires: "Aug 30, 2021",
   aboutCompany:
-    "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, vel placeat odit pariatur iste eaque, doloremque ratione sint totam rem deserunt dolor vero natus repudiandae cumque ipsa reiciendis molestias temporibus...</p>",
+    "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, vel placeat odit pariatur iste eaque, doloremque ratione sint totam rem deserunt dolor vero natus repudiandae cumque ipsa reiciendis molestias temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quas soluta commodi ratione accusamus, a ab qui officia suscipit excepturi pariatur, sunt mollitia quisquam quaerat non fugiat at, quae reiciendis.</p>",
   jobDescription:
     "<p>If you’re meticulous, loves a good system and routine - you’d be the perfect match for our Admin Executive 30 Applicants Singapore role! At Walter Holdings, we pride ourselves by ensuring that our employees get to grow professionally and personally. So if you’re someone that wants to embark on an exponential growth and journey, we look forward to meeting you virtually from your video response.</p> <p>PS: Remember to smile, and bring your energy online!</p>",
   skillPreferred: {

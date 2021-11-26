@@ -13,7 +13,7 @@ const ButtonJobDescription = () => {
     <>
       <Button onClick={handleShow}>View Job Description</Button>
 
-      <Modal show={show} onHide={handleClose} className="modalJD" size="xl">
+      <Modal show={show} onHide={handleClose} className={`modalJD `} size="xl">
         <Modal.Body className={styles.modalBody}>
           <JobDescription closePopup={handleClose} />
         </Modal.Body>
