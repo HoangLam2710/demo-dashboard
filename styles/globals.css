@@ -90,3 +90,31 @@
   color: var(--main-color) !important;
   border-radius: 0 30px 30px 0;
 }
+
+.modalJD .modal-dialog {
+  margin: 0 0 0 auto;
+}
+
+@media only screen and (min-width: 320px) {
+  .modalJD.modal {
+    padding-left: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .modalJD .modal-dialog {
+    max-width: 700px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .modalJD .modal-dialog {
+    max-width: 900px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .modalJD .modal-dialog {
+    max-width: 1140px;
+  }
+}
